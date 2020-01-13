@@ -11,7 +11,7 @@ class RawItem: Item, TaxProtocol {
     override class var typeOfItem: ItemTypes {
         return ItemTypes.raw
     }
-    
+    lazy let tax: Double
     
     override init(name: String,price: Double,quantity: Int) {
         
@@ -24,7 +24,7 @@ class RawItem: Item, TaxProtocol {
     
     
     func getTax() -> Double {
-        let tax = 0.125 * price
+        tax = 0.125 * price
         return tax
     }
     

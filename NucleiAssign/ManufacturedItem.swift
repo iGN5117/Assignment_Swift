@@ -8,6 +8,7 @@
 
 import Foundation
 class ManufacturedItem: Item, TaxProtocol {
+    lazy let tax: Double
     override  class var typeOfItem: ItemTypes {
         return ItemTypes.manufactured
     }
@@ -21,7 +22,7 @@ class ManufacturedItem: Item, TaxProtocol {
     }
     func getTax() -> Double {
         let preTax = 0.125 * price
-        let tax = preTax + 0.02 * (price + preTax)
+        tax = preTax + 0.02 * (price + preTax)
         return tax
     }
 }

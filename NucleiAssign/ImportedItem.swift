@@ -8,7 +8,7 @@
 
 import Foundation
 class ImportedItem: Item, TaxProtocol {
-    
+    lazy let tax: Double
     override class var typeOfItem: ItemTypes{
         return ItemTypes.imported
     }
@@ -35,7 +35,7 @@ class ImportedItem: Item, TaxProtocol {
         default:
             surcharge = 0
         }
-        let tax = costBeforeSurcharge + surcharge
+        tax = costBeforeSurcharge + surcharge
         return tax
     }
 }
