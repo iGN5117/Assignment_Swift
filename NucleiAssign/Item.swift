@@ -9,32 +9,31 @@
 import Foundation
 
 class Item {
-    class var typeOfItem:ItemTypes
-    {
-        get
-        {
+    class var typeOfItem:ItemTypes {
+        get {
             return ItemTypes.defaultItem
         }
     }
-    func getType()->ItemTypes
-    {
+    func getType()->ItemTypes {
         return Item.typeOfItem
     }
-    var name:String
-    var price:Double
-    var quantity:Int
-    var tax:Double
-    
-    func getTax()->Double{
-        return 0.0
+    func getTax()->Double {
+        return tax
     }
+    var name: String
+    var price: Double
+    var quantity: Int
+    var tax: Double
+    
+    
     
     
     init(name:String, price:Double, quantity:Int) {
         self.name = name
         self.price = price
         self.quantity = quantity
-        self.tax = 0;
+        self.tax = 0
+        
         
     }
     

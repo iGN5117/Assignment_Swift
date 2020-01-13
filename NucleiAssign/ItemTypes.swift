@@ -7,7 +7,7 @@
 //
 
 import Foundation
-enum ItemTypes:String{
+enum ItemTypes: String {
     case raw = "raw"
     case imported = "imported"
     case manufactured = "manufactured"

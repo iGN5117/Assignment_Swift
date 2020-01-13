@@ -9,14 +9,14 @@
 import Foundation
 class ImportedItem: Item{
     
-    override class var typeOfItem:ItemTypes{
+    override class var typeOfItem: ItemTypes{
         return ItemTypes.imported
     }
-    override init(name:String, price:Double, quantity:Int)
+    override init(name: String, price: Double, quantity: Int)
     {
         
         super.init(name: name, price: price, quantity: quantity)
-        super.tax = getTax()
+        
     }
     override func getType() -> ItemTypes {
         return ImportedItem.typeOfItem
@@ -25,8 +25,7 @@ class ImportedItem: Item{
         let importDuty = 0.1 * price
         let costBeforeSurcharge = price + importDuty
         var surcharge:Double
-        switch costBeforeSurcharge
-        {
+        switch costBeforeSurcharge {
         case 0..<100:
             surcharge = 5
         case 100..<200:

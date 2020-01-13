@@ -8,15 +8,15 @@
 
 import Foundation
 class RawItem: Item {
-    override class var typeOfItem:ItemTypes {
+    override class var typeOfItem: ItemTypes {
         return ItemTypes.raw
     }
     
     
-    override init(name:String,price:Double,quantity:Int) {
-        //super.type = ItemTypes.raw
+    override init(name: String,price: Double,quantity: Int) {
+        
         super.init(name: name, price: price, quantity: quantity)
-        super.tax = getTax()
+        
     }
     override func getType() -> ItemTypes {
         return RawItem.typeOfItem

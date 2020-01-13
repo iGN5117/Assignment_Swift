@@ -7,14 +7,14 @@
 //
 
 import Foundation
-class ManufacturedItem: Item{
-    override  class var typeOfItem:ItemTypes{
+class ManufacturedItem: Item {
+    override  class var typeOfItem: ItemTypes {
         return ItemTypes.manufactured
     }
-    override init(name:String, price:Double, quantity:Int)
+    override init(name: String, price: Double, quantity: Int)
     {
         super.init(name: name, price: price, quantity: quantity)
-        super.tax = getTax()
+        
     }
     override func getType() -> ItemTypes {
         return ManufacturedItem.typeOfItem

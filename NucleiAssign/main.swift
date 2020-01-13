@@ -18,15 +18,12 @@ print("-price <price> to enter price of each item")
 print("-quantity <quantity> to enter quantity of the item")
 print("\n")
 var continueLoop = true
-var name:String, type:ItemTypes?, price:Double, quantity:Int
+var name: String, type: ItemTypes?, price: Double, quantity: Int
 var items = [Item]()
-while(continueLoop)
-{
+while(continueLoop) {
     print("Do you want to enter an item? Press Enter for yes,type  -exit to exit")
-    if let inputStr = readLine()
-    {
-        switch(inputStr)
-        {
+    if let inputStr = readLine() {
+        switch(inputStr) {
         case "-exit":
             continueLoop = false
             break
@@ -37,21 +34,7 @@ while(continueLoop)
             print(" NAME ","\t\t"," PRICE ","\t\t","Quantity","\t\t  ","TYPE","\t\t  ","TOTAL PRICE")
             print("................................................................................................")
             
-            for item in items{
-                //                let typeOfClass:String
-                //                
-                //                if (item as? RawItem) != nil{
-                //                    typeOfClass = "raw"
-                //                }
-                //                else if (item as? ImportedItem) != nil{
-                //                    typeOfClass = "imported"
-                //                }
-                //                else if (item as? ManufacturedItem) != nil{
-                //                    typeOfClass = "manufactured"
-                //                }
-                
-                
-                
+            for item in items {
                 print(item.name,"\t\t",item.price,"\t\t\t",item.quantity,"\t\t\t\t",item.getType(),"\t\t\t",item.tax)
                 
                 print("................................................................................................")
@@ -61,8 +44,8 @@ while(continueLoop)
             
         default:
             (name,type,price,quantity) = Parser.parse()
-            var newItem:Item
-            switch type{
+            var newItem: Item
+            switch type {
             case .raw:
                 newItem = RawItem(name: name, price: price, quantity: quantity)
                 items.append(newItem)
