@@ -35,7 +35,7 @@ while(continueLoop) {
             print("................................................................................................")
             
             for item in items {
-                print(item.name,"\t\t",item.price,"\t\t\t",item.quantity,"\t\t\t\t",item.getType(),"\t\t\t",item.tax)
+                print(item.name,"\t\t",item.price,"\t\t\t",item.quantity,"\t\t\t\t",item.getType(),"\t\t\t",item.getTax())
                 
                 print("................................................................................................")
                 
