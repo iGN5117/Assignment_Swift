@@ -15,7 +15,8 @@ class Parser {
         var name: String = "",type: ItemTypes?,price: Double = 0 ,quantity: Int = 1
         while(continueLoop) {
             
-            if let inputStr = readLine() {
+            if var inputStr = readLine() {
+                inputStr = inputStr.trimmingCharacters(in: .whitespaces)
                 let keyValuePair = inputStr.components(separatedBy: " ")
                 
                 let key = keyValuePair[keyValuePair.startIndex]

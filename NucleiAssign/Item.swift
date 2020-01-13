@@ -9,21 +9,19 @@
 import Foundation
 
 class Item {
-    class var typeOfItem:ItemTypes {
+    class var typeOfItem: ItemTypes? {
         get {
-            return ItemTypes.defaultItem
+            return nil
         }
     }
     func getType()->ItemTypes {
-        return Item.typeOfItem
+        return Item.typeOfItem!
     }
-    func getTax()->Double {
-        return tax
-    }
+    
     var name: String
     var price: Double
     var quantity: Int
-    var tax: Double
+   
     
     
     
@@ -32,7 +30,7 @@ class Item {
         self.name = name
         self.price = price
         self.quantity = quantity
-        self.tax = 0
+      
         
         
     }

@@ -8,9 +8,8 @@
 
 import Foundation
 enum ItemTypes: String {
-    case raw = "raw"
-    case imported = "imported"
-    case manufactured = "manufactured"
-    case defaultItem = "default"
+    case raw
+    case imported
+    case manufactured
     
 }

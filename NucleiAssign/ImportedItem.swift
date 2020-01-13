@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class ImportedItem: Item{
+class ImportedItem: Item, TaxProtocol {
     
     override class var typeOfItem: ItemTypes{
         return ItemTypes.imported
@@ -21,7 +21,7 @@ class ImportedItem: Item{
     override func getType() -> ItemTypes {
         return ImportedItem.typeOfItem
     }
-    override func getTax() -> Double {
+    func getTax() -> Double {
         let importDuty = 0.1 * price
         let costBeforeSurcharge = price + importDuty
         var surcharge:Double

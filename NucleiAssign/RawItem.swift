@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class RawItem: Item {
+class RawItem: Item, TaxProtocol {
     override class var typeOfItem: ItemTypes {
         return ItemTypes.raw
     }
@@ -23,7 +23,7 @@ class RawItem: Item {
     }
     
     
-    override func getTax() -> Double {
+    func getTax() -> Double {
         let tax = 0.125 * price
         return tax
     }

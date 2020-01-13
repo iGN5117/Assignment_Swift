@@ -19,10 +19,11 @@ print("-quantity <quantity> to enter quantity of the item")
 print("\n")
 var continueLoop = true
 var name: String, type: ItemTypes?, price: Double, quantity: Int
-var items = [Item]()
+var items = [Item & TaxProtocol]()
 while(continueLoop) {
     print("Do you want to enter an item? Press Enter for yes,type  -exit to exit")
-    if let inputStr = readLine() {
+    if var inputStr = readLine() {
+        inputStr = inputStr.trimmingCharacters(in: .whitespaces)
         switch(inputStr) {
         case "-exit":
             continueLoop = false
@@ -44,7 +45,7 @@ while(continueLoop) {
             
         default:
             (name,type,price,quantity) = Parser.parse()
-            var newItem: Item
+            var newItem: Item & TaxProtocol
             switch type {
             case .raw:
                 newItem = RawItem(name: name, price: price, quantity: quantity)
@@ -61,5 +62,8 @@ while(continueLoop) {
             
             
         }
+    }
+    else {
+        print("Never gonna come here")
     }
 }
